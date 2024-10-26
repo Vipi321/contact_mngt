@@ -1,0 +1,77 @@
+/* View.css */
+
+body {
+    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0; /* Remove default margin */
+  }
+  
+  .view-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 0 20px; /* Add horizontal padding for small screens */
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Adjust card width */
+    width: 100%; /* Make card responsive */
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+  
+  .text-dark {
+    color: #343a40; /* Dark text color for contrast */
+  }
+  
+  .detail {
+    margin-bottom: 15px; /* Space between details */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Align items to the sides */
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+    margin-top: 20px; /* Space above buttons */
+  }
+  
+  .btn {
+    width: 48%; /* Equal button width */
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05); /* Slightly increase button size on hover */
+  }
+  
+  .text-danger {
+    color: #ff4d4d; /* More noticeable error color */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .card {
+      width: 90%; /* Full width on smaller screens */
+    }
+  }
+  
+  .loading-container, .error-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .loading-container h3, .error-container h4 {
+    color: #6c757d; /* Subtle color for loading and error messages */
+  }
+  

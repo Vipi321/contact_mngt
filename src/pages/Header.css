@@ -1,0 +1,24 @@
+/* Header.css */
+
+.custom-navbar {
+    background-color: #124E66; /* Navbar background color */
+  }
+  
+  .navbar-title {
+    font-size: 1.5rem; /* Navbar title font size */
+    color: white; /* Navbar title color */
+  }
+  
+  .nav-item {
+    color: white; /* Nav item text color */
+  }
+  
+  .nav-item:hover {
+    color: #d1e7dd; /* Nav item hover color */
+  }
+  
+  .navbar-logo {
+    width: 40px; /* Logo size */
+    height: auto;
+  }
+  

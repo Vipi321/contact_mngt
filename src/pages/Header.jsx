@@ -1,21 +1,21 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+// Navbar.js
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
 
 function Header() {
   return (
-    <>
-    <Navbar style={{background: "#748D92",}}>
-        <Container >
-          <Navbar.Brand href="/Landing">
-          <i className="fa-solid fa-address-book fa-flip fa-2xl" style={{color: "#212A31",}} />
-            {' '}
-            Contact Manager
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
-    </>
-  )
+    <Navbar bg="light" expand="lg" className="mb-4">
+      <Navbar.Brand as={Link} to="/">Contact Manager</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ml-auto">
+          <Nav.Link as={Link} to="/">Home</Nav.Link>
+          <Nav.Link as={Link} to="/create">Add Contact</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
 }
 
-export default Header
+export default Header;

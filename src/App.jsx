@@ -7,13 +7,13 @@ import Update from './components/Update'
 import Create from './components/Create'
 import './bootstrap.min.css'
 import Landing from './components/Landing'
-import Header from './pages/Header'
+
 
 function App(){
 
   return (
     <>
-      <Header/>
+      
       <Routes>
         <Route path='/' element={<Landing/>}/>
         <Route path='/home' element={<Home/>}/>

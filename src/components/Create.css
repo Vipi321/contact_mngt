@@ -1,0 +1,57 @@
+/* Container for form with gradient background */
+.create-container {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-wrapper {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .form-control {
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #28A745;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+  }
+  
+  .input-group-text {
+    background-color: #28A745;
+    color: #fff;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  /* Make it responsive */
+  @media (max-width: 576px) {
+    .form-wrapper {
+      padding: 15px;
+    }
+  
+    button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  

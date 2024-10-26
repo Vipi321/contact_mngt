@@ -1,68 +1,83 @@
-import React,{useState} from 'react'
-import { Link,useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import './Create.css'; // Import external CSS for styling
 
 function Create() {
-  const [values,setValues]=useState({
+  const [values, setValues] = useState({
     name: '',
     email: '',
     phone: ''
-})
+  });
 
+  const navigate = useNavigate();
 
-const navigate = useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (values.name && values.email && values.phone) {
+      axios.post('https://mp-server-42iv.onrender.com/create/', values)
+        .then(res => {
+          console.log(res);
+          navigate('/');
+        })
+        .catch(err => console.log(err));
+    } else {
+      alert("Please fill in all fields with valid input.");
+    }
+  };
 
-const handleSubmit = (event)=>{
-  event.preventDefault();
-  if(values.name && values.email && values.phone){
-    axios.post('https://mp-server-42iv.onrender.com/create/',values)
-    .then(res => {
-    console.log(res);
-    navigate('/')
-    
-  })
-  .catch(err => console.log(err));
-  }else{
-    alert("Enter valid input")
-  }
-  
-}
   return (
-    <>
-    <div className='d-flex w-100 vh-100 justify-content-center align-items-center ' style={{background: "#124E66"}}>
-      <div className=' border bg-white shadow px-5 pt-3 pb-5 rounded'>
-        <h4 className='text-secondary d-flex justify-content-center align-items-center h4'>Add New Contact</h4>
-        <form action="" onSubmit={handleSubmit}>
-          <div className='mb-2'>
-            <label htmlFor="name">Name :</label>
-            <input type="text" name='name' className='form-control' placeholder='Enter Name'
-            onChange={e=>setValues({...values,name:e.target.value})}/>
-
+    <div className="create-container d-flex justify-content-center align-items-center vh-100">
+      <div className="form-wrapper p-5">
+        <h4 className="text-center mb-4 text-white">Add New Contact</h4>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="name" className="form-label text-white">Name</label>
+            <div className="input-group">
+              <span className="input-group-text"><i className="fa fa-user"></i></span>
+              <input
+                type="text"
+                name="name"
+                className="form-control"
+                placeholder="Enter Name"
+                onChange={e => setValues({ ...values, name: e.target.value })}
+              />
+            </div>
           </div>
-          <div className='mb-2'>
-            <label htmlFor="emai;">Email :</label>
-            <input type="email" name='email' className='form-control' placeholder='Enter Email'
-            onChange={e=>setValues({...values,email:e.target.value})}/>
-
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label text-white">Email</label>
+            <div className="input-group">
+              <span className="input-group-text"><i className="fa fa-envelope"></i></span>
+              <input
+                type="email"
+                name="email"
+                className="form-control"
+                placeholder="Enter Email"
+                onChange={e => setValues({ ...values, email: e.target.value })}
+              />
+            </div>
           </div>
-          <div className='mb-2'>
-            <label htmlFor="name">Phone :</label>
-            <input type="number" name='phone' className='form-control' placeholder='Enter Number'
-            onChange={e=>setValues({...values,phone:e.target.value})}/>
-
+          <div className="mb-3">
+            <label htmlFor="phone" className="form-label text-white">Phone</label>
+            <div className="input-group">
+              <span className="input-group-text"><i className="fa fa-phone"></i></span>
+              <input
+                type="number"
+                name="phone"
+                className="form-control"
+                placeholder="Enter Phone Number"
+                onChange={e => setValues({ ...values, phone: e.target.value })}
+              />
+            </div>
           </div>
-          <div className='mb-3 mt-4 d-flex justify-content-between'>
-            <Link to="/" className='btn btn-primary ' >Back</Link>
-            <button className='btn btn-success ms-5 '>Submit</button>
+          <div className="d-flex justify-content-between mt-4">
+            <Link to="/" className="btn btn-primary">Back</Link>
+            <button type="submit" className="btn btn-success">Submit</button>
           </div>
-          
-          
         </form>
       </div>
     </div>
-    </>
-  )
+  );
 }
 
-export default Create
+export default Create;

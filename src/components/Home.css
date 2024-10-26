@@ -1,0 +1,38 @@
+/* Home.css */
+.custom-navbar {
+  background-color: #007bff; /* Change to your desired navbar color */
+}
+
+.navbar-logo {
+  height: 30px; /* Adjust size as needed */
+}
+
+.card {
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Home.css */
+.custom-navbar {
+  background-color: #007bff; /* Change to your desired navbar color */
+}
+
+.navbar-logo {
+  height: 30px; /* Adjust size as needed */
+}
+
+.card {
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+.card-footer .btn {
+  flex: 5px; /* Make buttons take equal space */
+  margin: 1px 15px; /* Space between buttons */
+}
